@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+}
+
+.App {
+  text-align: center;
+}
+
+.main-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: minmax(600px, auto);
+  border: 1px solid black;
+}

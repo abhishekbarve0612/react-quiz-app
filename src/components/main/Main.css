@@ -1,0 +1,28 @@
+.sidebar {
+  grid-column: 1/2;
+  border-right: 1px dashed rosybrown;
+}
+
+.main-area {
+  grid-column: 3/7;
+  text-align: justify;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar button {
+  padding: 20px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+}
+.sidebar button:nth-child(odd) {
+  padding: 20px;
+  background-color: lightgrey;
+  color: black;
+}

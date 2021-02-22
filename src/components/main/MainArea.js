@@ -2,10 +2,12 @@ import react from 'react';
 import Quiz from '../quiz/Quiz';
 import QuizList from '../quiz/QuizList';
 import './Main.css';
-const MainArea = () => {
+const MainArea = ({quizOn}) => {
   return ( 
       <div className="main-area">
-        <QuizList />
+        {
+          quizOn? <Quiz /> : <QuizList />
+        }
       </div>
       
    );

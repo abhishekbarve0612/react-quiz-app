@@ -1,6 +1,7 @@
 import react from 'react';
 import './Navbar.css';
 import logo from '../../logo.svg';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
   return ( 
@@ -15,10 +16,10 @@ const Navbar = () => {
       </div>
       <div className="menu">
         <div className="item">
-          <a href="#opt1">Home</a>
+          <Link to="/react-quiz-app/">Home</Link>
         </div>
         <div className="item">
-        <a href="#opt2">Play Random Quiz</a>
+        <Link to="/react-quiz-app/quiz">Play Random Quiz</Link>
         </div>
         <div className="item">
           <a href="#opt3">ScoreCard</a>

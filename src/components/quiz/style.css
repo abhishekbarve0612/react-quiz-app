@@ -89,3 +89,71 @@
   border: 1px solid black;
   padding: 10px;
 }
+
+/*****Quiz Info Card ********/
+
+.quiz-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.quiz-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-columns: minmax(50px, auto);
+  padding: 20px;
+  width: 250px;
+  background-color: burlywood;
+}
+
+.quiz-info-head {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-items: baseline;
+}
+.quiz-name {
+  grid-column: 1/3;
+  align-self: center;
+  font-size: large;
+  font-weight: 400;
+}
+.quiz-attempt {
+  grid-column: 3/4;
+  justify-self: center;
+  align-self: center;
+}
+button {
+  padding: 8px;
+  border: none;
+  background-color: lightgreen;
+}
+
+.quiz-details {
+  justify-self: right;
+  text-align: right;
+}
+
+/** Question Navigator ***/
+
+.question-navigator {
+  grid-column: 1/2;
+  border-right: 1px dashed rosybrown;
+}
+
+.question-navigator {
+  display: flex;
+  flex-direction: column;
+}
+.question-navigator button {
+  padding: 20px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+}
+.question-navigator button:nth-child(odd) {
+  padding: 20px;
+  background-color: lightgrey;
+  color: black;
+}

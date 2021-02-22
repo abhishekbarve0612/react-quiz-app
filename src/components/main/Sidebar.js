@@ -1,19 +1,14 @@
 import React from 'react';
 import './Main.css';
+import RankerCard from './RankerCard';
 const Sidebar = () => {
   return ( 
     <div className="sidebar">
-      <button>Question 1</button>
-      <button>Question 11</button>
-      <button>Question 111</button>
-      <button>Question 1V</button>
-      <button>Question V</button>
-      <button>Question 1</button>
-      <button>Question 11</button>
-      <button>Question 111</button>
-      <button>Question 1V</button>
-      <button>Question V</button>
-      <button>Question V</button>
+      <h3>Our Top Rankers!!</h3>
+      <RankerCard name="Abhishek" rank={1} />
+      <RankerCard name="Abhi" rank={2} />
+      <RankerCard name="Abhishek Barve" rank={3} />
+      <RankerCard name="Abhishek" rank={4} />
     </div>
    );
 }

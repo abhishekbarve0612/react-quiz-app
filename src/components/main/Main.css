@@ -26,3 +26,34 @@
   background-color: lightgrey;
   color: black;
 }
+
+/** Ranker Card ***/
+
+.ranker {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: minmax(50px, auto);
+  background-color: darkgray;
+}
+.ranker:nth-child(odd) .rank {
+  background-color: darkgray;
+}
+.ranker:nth-child(odd) .name {
+  background-color: white;
+}
+
+.ranker .rank {
+  background-color: white;
+  grid-column: 1/2;
+  display: grid;
+}
+.ranker .name {
+  background-color: darkgray;
+  grid-column: 2/4;
+  display: grid;
+}
+
+.ranker .name > div,
+.ranker .rank > div {
+  align-self: center;
+}

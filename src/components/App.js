@@ -1,5 +1,6 @@
 
 import './App.css';
+import Footer from './footer/Footer';
 import Navbar from './header/Navbar';
 import MainArea from './main/MainArea';
 import Sidebar from './main/Sidebar';
@@ -13,6 +14,7 @@ function App() {
         <Sidebar />
         <MainArea />
         </div>
+        <Footer />
     </div>
   );
 }

@@ -1,20 +1,40 @@
 .navbar {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 5fr 3fr;
   border-bottom: 1px solid darkkhaki;
   grid-auto-rows: minmax(50px, auto);
   text-transform: uppercase;
+  font-family: monospace;
+  font-size: 15px;
 }
 
 .navbar .brand {
   justify-self: start;
   align-self: center;
   padding-left: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.brand .brand-icon {
+  grid-column: 1/2;
+}
+
+.brand-name {
+  align-self: center;
 }
 
 .navbar .menu {
-  justify-self: stretch;
+  justify-self: center;
+  background-color: antiquewhite;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+}
+.menu .item {
+  border-right: 1px solid black;
   align-self: center;
+}
+
+.menu .item:last-child {
+  border: none;
 }

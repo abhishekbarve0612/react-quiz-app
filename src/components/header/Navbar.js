@@ -25,10 +25,10 @@ const Navbar = () => {
           <a href="#opt3">ScoreCard</a>
         </div>
         <div className="item">
-          <a href="#opt3">Sign Up</a>
+          <Link to="/react-quiz-app/register">Register</Link>
         </div>
         <div className="item">
-          <a href="#opt3">Sign In</a>
+          <Link to="/react-quiz-app/sign-in">Sign In</Link>
         </div>
       </div>
     </div>

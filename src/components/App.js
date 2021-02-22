@@ -7,6 +7,8 @@ import MainArea from './main/MainArea';
 import Sidebar from './main/Sidebar';
 import QuestionNavigator from './quiz/QuestionNavigator';
 import Quiz from './quiz/Quiz';
+import Registration from './accounts/Registration';
+import Signin from './accounts/Signin';
 
 function App() {
   return (
@@ -22,6 +24,14 @@ function App() {
           <Route exact path="/react-quiz-app/quiz">
             <QuestionNavigator />
             <MainArea quizOn={true} />
+          </Route>
+          <Route exact path="/react-quiz-app/register">
+            <Sidebar />
+            <Registration />
+          </Route>
+          <Route exact path="/react-quiz-app/sign-in">
+            <Sidebar />
+            <Signin />
           </Route>
         </Switch>
         </div>

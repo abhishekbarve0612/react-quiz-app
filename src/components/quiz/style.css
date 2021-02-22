@@ -124,7 +124,7 @@
   justify-self: center;
   align-self: center;
 }
-button {
+.quiz-attempt button {
   padding: 8px;
   border: none;
   background-color: lightgreen;

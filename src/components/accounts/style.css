@@ -1,0 +1,77 @@
+.register {
+  grid-column: 3/7;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.register .heading {
+  font-size: 40px;
+}
+
+.register > div {
+  justify-self: center;
+  align-self: center;
+}
+
+.register .registration-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.registration-form form {
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.registration-form .sign-up-with {
+  grid-column: 5/6;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-columns: minmax(100px, auto);
+  margin-left: 20px;
+  justify-self: right;
+}
+
+.sign-up-with button {
+  padding: 15px;
+  margin: 5px;
+  align-self: center;
+}
+
+form .form-input {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px;
+}
+
+.form-input input {
+  grid-column: 2/5;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 20px;
+  align-self: center;
+}
+.form-input label {
+  grid-column: 1/2;
+  font-size: large;
+  text-transform: uppercase;
+  justify-self: left;
+  align-self: center;
+}
+
+.form-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 20px;
+}
+
+.form-buttons button {
+  padding: 10px;
+}
+
+.form-submit button {
+  padding: 20px;
+}

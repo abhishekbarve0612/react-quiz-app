@@ -73,10 +73,12 @@
 
 .quiz-nav .previous {
   grid-column: 1/2;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .quiz-nav button {
-  padding: 10px;
   background-color: cornflowerblue;
+  justify-self: stretch;
 }
 .quiz-nav .submit {
   grid-column: 5/6;

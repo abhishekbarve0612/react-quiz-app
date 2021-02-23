@@ -22,6 +22,8 @@ const Quiz = () => {
 
   return ( 
       <div className="quiz">
+        {isLoading && <div>Content Is Loadin</div>}
+        {error && <div>Error {error} </div>}
       <div className="quiz-header">
         {quiz && <div className="quiz-title">
           Quiz Title: {quiz['results'][0].category}

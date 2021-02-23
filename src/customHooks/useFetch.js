@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import axios from 'axios';
 const useFetch = (url) => {
   
   const [data, setData] = useState(null);
@@ -7,11 +6,10 @@ const useFetch = (url) => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const abortCont = new AbortController();
-    axios.get(url, {signal: abortCont.signal })
-    .then(res => {
-      return res.data;
-    })
+    fetch(url, {signal: abortCont.signal })
+    .then((res) => res.json())
     .then(data => {
+      console.log(data);
       setIsLoading(false);
       setData(data);
       setError(null);

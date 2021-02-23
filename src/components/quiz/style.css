@@ -74,6 +74,10 @@
 .quiz-nav .previous {
   grid-column: 1/2;
 }
+.quiz-nav button {
+  padding: 10px;
+  background-color: cornflowerblue;
+}
 .quiz-nav .submit {
   grid-column: 5/6;
   background-color: greenyellow;
@@ -156,4 +160,10 @@
   padding: 20px;
   background-color: lightgrey;
   color: black;
+}
+
+/*****/
+.marked {
+  background-color: purple !important;
+  color: wheat;
 }

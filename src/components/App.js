@@ -21,7 +21,7 @@ function App() {
             <Sidebar />
             <MainArea quizOn={false} />
           </Route>
-          <Route exact path="/react-quiz-app/quiz">
+          <Route exact path="/react-quiz-app/quiz/:qn">
             <QuestionNavigator />
             <MainArea quizOn={true} />
           </Route>

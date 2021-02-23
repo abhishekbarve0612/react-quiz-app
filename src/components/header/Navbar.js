@@ -19,7 +19,7 @@ const Navbar = () => {
           <Link to="/react-quiz-app/">Home</Link>
         </div>
         <div className="item">
-        <Link to="/react-quiz-app/quiz">Play Random Quiz</Link>
+        <Link to="/react-quiz-app/quiz/0">Play Random Quiz</Link>
         </div>
         <div className="item">
           <a href="#opt3">ScoreCard</a>

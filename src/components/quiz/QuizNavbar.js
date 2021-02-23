@@ -12,10 +12,10 @@ const QuizNavbar = () => {
       { qno > 0
         &&
         <Link to={`/react-quiz-app/quiz/${prev}`}>
-        <button className="previous">Previous</button>
+        <span className="previous">Previous</span>
       </Link>}
       {next && <Link to={`/react-quiz-app/quiz/${next}`}>
-      <button className="next">Next</button>
+      <span className="next">Next</span>
       </Link>}
       <div className="submit">Submit</div>
       <div className="close">Close</div>

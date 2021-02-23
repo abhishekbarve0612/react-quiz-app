@@ -18,11 +18,9 @@ function App() {
       <div className="main-body">
         <Switch>
           <Route exact path="/react-quiz-app/">
-            <Sidebar />
             <MainArea quizOn={false} />
           </Route>
           <Route exact path="/react-quiz-app/quiz/:qn">
-            <QuestionNavigator />
             <MainArea quizOn={true} />
           </Route>
           <Route exact path="/react-quiz-app/register">

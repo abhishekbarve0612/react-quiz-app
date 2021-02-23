@@ -1,17 +1,19 @@
-const QuestionNavigator = () => {
+import { Link } from "react-router-dom";
+
+const QuestionNavigator = ({quiz}) => {
+  const len = quiz['results'].length;
+  let urlArray = [];
+  for (let i = 0; i < len; i++) {
+    const url = `/react-quiz-app/quiz/${i}`;
+    urlArray.push(url);
+  }
   return ( 
     <div className="question-navigator">
-    <button>Question 1</button>
-    <button>Question 11</button>
-    <button>Question 111</button>
-    <button>Question 1V</button>
-    <button>Question V</button>
-    <button>Question 1</button>
-    <button>Question 11</button>
-    <button>Question 111</button>
-    <button>Question 1V</button>
-    <button>Question V</button>
-    <button>Question V</button>
+      {urlArray.map((url, key) => (
+        <Link key={key} to={url}>
+          <span>Question {key+1}</span>
+        </Link>
+      ))}
   </div>
  
    );

@@ -5,10 +5,7 @@ import QuizNavbar from './QuizNavbar';
 import moduleName from '../../customHooks/useFetch';
 import useFetch from '../../customHooks/useFetch';
 
-const Quiz = () => {
-  const API_URL = "https://opentdb.com/api.php?amount=10&category=31&difficulty=easy";
-  const { data: quiz, isLoading, error} = useFetch(API_URL);
-  console.log(quiz);
+const Quiz = ({quiz, isLoading, error}) => {
   let markedAnswers = [];
   for (let i = 0; i < 5; i++) {
     const obj = {
@@ -22,7 +19,7 @@ const Quiz = () => {
 
   return ( 
       <div className="quiz">
-        {isLoading && <div>Content Is Loadin</div>}
+        {isLoading && <div>Content Is Loading</div>}
         {error && <div>Error {error} </div>}
       <div className="quiz-header">
         {quiz && <div className="quiz-title">

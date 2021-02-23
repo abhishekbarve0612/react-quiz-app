@@ -6,13 +6,12 @@ import moduleName from '../../customHooks/useFetch';
 import useFetch from '../../customHooks/useFetch';
 
 const Quiz = ({quiz, isLoading, error}) => {
-  let markedAnswers = [];
-  for (let i = 0; i < 5; i++) {
-    const obj = {
-      i: []
-    }
-    markedAnswers.push(obj);
+  let markedAnswers = {};
+  for (let i = 0; i < 10; i++) {
+    markedAnswers[i] = new Set();
   }
+  console.log("AAAAAAAAAAAAAAAAAAAA");
+  console.log(markedAnswers);
 
 
 

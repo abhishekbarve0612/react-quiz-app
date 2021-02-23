@@ -30,6 +30,25 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
+
+@media only screen and (max-width: 1000px) {
+  .navbar .menu {
+    justify-self: center;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar .menu {
+    justify-self: center;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+
 .menu .item {
   border-right: 1px solid black;
   align-self: center;

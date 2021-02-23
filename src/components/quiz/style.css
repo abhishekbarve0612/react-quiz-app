@@ -50,7 +50,7 @@
 }
 .options {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
 }
 
@@ -105,9 +105,26 @@
 
 /*****Quiz Info Card ********/
 
+.quiz-list-category {
+  display: grid;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+}
+
+.categories > div {
+  background-color: aqua;
+  height: minmax(40px, auto);
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+
 .quiz-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
 }
 

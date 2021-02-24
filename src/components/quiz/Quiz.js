@@ -12,23 +12,22 @@ const Quiz = () => {
   const { data:quiz, isLoading, error} = useFetch(API_URL);
   let markedAnswers = [];
   for (let i = 0; i < 10; i++) {
-    markedAnswers[i] = new Set();
+    markedAnswers[i] = '';
   }
   const [mAnswers, setMAnswers] = useState(markedAnswers);
   const markAnswer = (e, qno) => {
     let tempArray = [...mAnswers];
-    tempArray[qno].add("Abisek");
     if (e.target.nodeName == "INPUT" || e.target.nodeName == "SPAN"){
       let parent = e.target.parentElement;
       let check = parent.children;
       if (parent.classList.contains("marked")){
           parent.classList.remove("marked");
           check[0].checked = false;
-          tempArray[qno].delete(parent.getAttribute("value"));
+          tempArray[qno] = '';
         } else{
           parent.classList.add("marked");
           check[0].checked = true;
-          tempArray[qno].add(parent.getAttribute("value"));
+          tempArray[qno] = parent.getAttribute("value");
         }
     } else {
       let element = e.target;
@@ -36,19 +35,37 @@ const Quiz = () => {
       if (element.classList.contains("marked")){
           element.classList.remove("marked");
           check[0].checked = false;
-          tempArray[qno].delete(element.getAttribute("value"));
+          tempArray[qno] = '';
         } else{
           element.classList.add("marked");
           check[0].checked = true;
-          tempArray[qno].add(element.getAttribute("value"));
+          tempArray[qno] = element.getAttribute("value");
         }
     }
     setMAnswers(tempArray);
   }
 
+  const computeScore = () => {
+    if (quiz){
+      const qno = urlParam.qn;
+      const correctAnswers = quiz['results'];
+      console.log("Checkin correct answers");
+      console.log(correctAnswers);
+      let correct_answers = {};
+      let count = 0;
+      for (const obj of quiz['results']) {
+        let s = new Set();
+        s.add(obj.correct_answer);
+        correct_answers[count] = s;
+        count++;
+      }
+      console.log(correct_answers);
+    }
+  }
+
   const checkIfMarked = (qno, value, element) => {
       const check = element.children;
-      if (mAnswers[qno].has(value)){
+      if (mAnswers[qno] == value){
         element.classList.add("marked");
         check[0].checked = true;
       } else {

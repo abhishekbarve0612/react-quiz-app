@@ -1,6 +1,7 @@
 
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {Provider} from 'react-redux';
 import Footer from './footer/Footer';
 import Navbar from './header/Navbar';
 import MainArea from './main/MainArea';
@@ -9,9 +10,11 @@ import QuestionNavigator from './quiz/QuestionNavigator';
 import Quiz from './quiz/Quiz';
 import Registration from './accounts/Registration';
 import Signin from './accounts/Signin';
+import store from '../redux/store';
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
     <div className="App">
       <Navbar />
@@ -37,6 +40,7 @@ function App() {
     </div>
   
     </Router>
+    </Provider>
     );
 }
 

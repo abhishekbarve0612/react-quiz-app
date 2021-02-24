@@ -1,0 +1,1 @@
+export {incrementScore} from './score/scoreActions';

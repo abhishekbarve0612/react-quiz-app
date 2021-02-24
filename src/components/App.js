@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/react-quiz-app/">
             <MainArea quizOn={false} />
           </Route>
-          <Route exact path="/react-quiz-app/quiz/:qn">
+          <Route exact path="/react-quiz-app/quiz/:qid/:qn">
             <MainArea quizOn={true} />
           </Route>
           <Route exact path="/react-quiz-app/register">

@@ -111,15 +111,21 @@
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, auto));
+  grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+  gap: 5px;
 }
 
-.categories > div {
+.categories > a {
   background-color: aqua;
   height: minmax(40px, auto);
+  width: 100px;
   text-align: center;
   padding: 10px;
   margin: 10px;
+  display: grid;
+}
+.categories > a > span {
+  align-self: center;
 }
 
 .quiz-list {

@@ -9,7 +9,6 @@ const useFetch = (url) => {
     fetch(url, {signal: abortCont.signal })
     .then((res) => res.json())
     .then(data => {
-      console.log(data);
       setIsLoading(false);
       setData(data);
       setError(null);

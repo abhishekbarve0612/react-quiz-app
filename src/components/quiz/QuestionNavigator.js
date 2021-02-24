@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const QuestionNavigator = ({quiz}) => {
-  const len = quiz['results'].length;
+const QuestionNavigator = () => {
+  const urlParam = useParams();
+  
   let urlArray = [];
-  for (let i = 0; i < len; i++) {
-    const url = `/react-quiz-app/quiz/${i}`;
+  for (let i = 0; i < 10; i++) {
+    const url = `/react-quiz-app/quiz/${urlParam.qid}/${i}`;
     urlArray.push(url);
   }
   return ( 

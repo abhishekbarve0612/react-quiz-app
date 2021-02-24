@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Option from './Option';
 
-const QuestionAnswer = ({markedAnswers, question, qno}) => {
+const QuestionAnswer = ({markedAnswers, question, markAnswer, checkIfMarked}) => {
   const qn = useParams().qn;
   const quest = question[qn];
   let answers = new Set();
+  const shuffleArr =  (array) => {
+    for (var i = array.length - 1; i > 0; i--) {
+        var rand = Math.floor(Math.random() * (i + 1));
+        [array[i], array[rand]] = [array[rand], array[i]]
+    }
+  }
   let options = [
     ...quest['incorrect_answers'],
     quest['correct_answer']
   ]
+  useEffect(() => {
+    
+  console.log(options + " -----");
+  shuffleArr(options);
+  console.log(options);
+  }, [options])
   return ( 
     <>
     
@@ -19,7 +31,8 @@ const QuestionAnswer = ({markedAnswers, question, qno}) => {
           </div>
           <div className="options">
           {options.map((opt, index) => (
-              <Option key={index}  value={opt} answers={answers} markedAnswers={markedAnswers} qno={qn} />
+              
+              <Option key={index} checkIfMarked={checkIfMarked}  value={opt} markAnswer={markAnswer} markedAnswers={markedAnswers} qno={qn} />
           ))}
           </div>
     </>

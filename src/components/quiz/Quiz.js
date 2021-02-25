@@ -119,7 +119,7 @@ const Quiz = () => {
         {error && <div>Error {error} </div>}
       <div className="quiz-header">
         {quiz != null && <div className="quiz-title">
-          Quiz Title: {category}
+          Quiz Title: {quiz['results'][0].category}
         </div>}
         <div className="quiz-creator">
           Quiz Creator

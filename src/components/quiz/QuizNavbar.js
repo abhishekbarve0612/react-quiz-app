@@ -1,12 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import './style.css';
 const QuizNavbar = () => {
   const qn = useParams();
+  const questionCount = useSelector(state => state.quiz.questionCount);
   let qno = parseInt(qn.qn);
   let prev = null, next = null;
   if (qno > 0) prev = qno-1;
-  if (qno < 9) next = qno+1;
+  if (qno < questionCount-1) next = qno+1;
   return ( 
     <div className="quiz-nav">
       { qno > 0

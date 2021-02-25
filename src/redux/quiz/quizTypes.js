@@ -1,3 +1,6 @@
 export const SET_QUIZ = "SET_QUIZ";
-
 export const MARKED_ANSWERS = "MARKED_ANSWERS";
+export const SET_CATEGORY = "SET_CATEGORY";
+export const SET_GUEST_USER = "SET_GUEST_USER";
+export const SET_QUESTION_COUNT = "SET_QUESTION_COUNT";
+export const SET_DIFFICULTY = "SET_DIFFICULTY";

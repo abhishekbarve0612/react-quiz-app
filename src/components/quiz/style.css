@@ -156,6 +156,8 @@
 .question-navigator {
   grid-column: 1/2;
   border-right: 1px dashed rosybrown;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .question-navigator {
@@ -195,4 +197,13 @@
   justify-self: center;
   align-self: center;
   text-align: center;
+}
+
+/*** New Quiz Form **/
+
+.for-guest-user {
+  display: grid;
+  width: 100vw;
+  justify-content: center;
+  align-content: center;
 }

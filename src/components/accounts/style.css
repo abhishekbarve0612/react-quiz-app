@@ -46,7 +46,8 @@ form .form-input {
   padding: 10px;
 }
 
-.form-input input {
+.form-input input,
+select {
   grid-column: 2/5;
   padding: 10px;
   margin: 10px;

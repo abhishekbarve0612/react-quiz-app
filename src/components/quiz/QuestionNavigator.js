@@ -1,10 +1,11 @@
+import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 
 const QuestionNavigator = () => {
   const urlParam = useParams();
-  
+  const questionCount = useSelector(state => state.quiz.questionCount);
   let urlArray = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < questionCount; i++) {
     const url = `/react-quiz-app/quiz/${urlParam.qid}/${i}`;
     urlArray.push(url);
   }

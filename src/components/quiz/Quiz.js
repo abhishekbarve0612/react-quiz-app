@@ -5,15 +5,21 @@ import QuizNavbar from './QuizNavbar';
 import moduleName from '../../customHooks/useFetch';
 import useFetch from '../../customHooks/useFetch';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementScore, markedAnswers, setQuiz } from '../../redux';
+import { incrementScore, markedAnswers, setQuiz, setCategory } from '../../redux';
 
 const Quiz = () => {
   const totalScore = useSelector(state => state.score.totalScore);
   const markedAnswersFromStore = useSelector(state => state.quiz.markedAnswers);
-  const fetchedQuiz = useSelector(state => state.quiz.setQuiz);
+  const fetchedQuiz = useSelector(state => state.quiz.quiz);
+  const questionCount = useSelector(state => state.quiz.questionCount);
+  const category = useSelector(state => state.quiz.category);
+  const difficulty = useSelector(state => state.quiz.difficulty);
   const dispatch = useDispatch();
   const urlParam = useParams();
-  const API_URL = `https://opentdb.com/api.php?amount=10&category=${urlParam.qid}&difficulty=easy`;
+  console.log(questionCount + " " + difficulty);
+  dispatch(setCategory(urlParam.qid));
+  const API_URL = `https://opentdb.com/api.php?amount=${questionCount}&category=${category}&difficulty=${difficulty}`;
+  console.log(API_URL);
   const { data:quiz, isLoading, error} = useFetch(API_URL);
   dispatch(setQuiz(quiz));
   const shuffleArr =  (array) => {
@@ -23,8 +29,8 @@ const Quiz = () => {
     }
   }
   let optionsArray = [];
-  if (quiz){
-    for(let i = 0; i < 10; i++){
+  if (quiz != null){
+    for(let i = 0; i < quiz['results'].length; i++){
       let options = [
         ...quiz['results'][i]['incorrect_answers'],
         quiz['results'][i]['correct_answer']
@@ -112,14 +118,14 @@ const Quiz = () => {
         {isLoading && <div>Content Is Loading</div>}
         {error && <div>Error {error} </div>}
       <div className="quiz-header">
-        {quiz && <div className="quiz-title">
-          Quiz Title: {quiz['results'][0].category}
+        {quiz != null && <div className="quiz-title">
+          Quiz Title: {category}
         </div>}
         <div className="quiz-creator">
           Quiz Creator
         </div>
         <div className="quiz-score">
-          Your Score: {totalScore}
+          Top Score: 0
         </div>
       </div>
             

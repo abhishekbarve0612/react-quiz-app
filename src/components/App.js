@@ -12,6 +12,7 @@ import Registration from './accounts/Registration';
 import Signin from './accounts/Signin';
 import store from '../redux/store';
 import ScoreCard from './quiz/ScoreCard';
+import NewQuiz from './quiz/NewQuiz';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         <Switch>
           <Route exact path="/react-quiz-app/">
             <MainArea quizOn={false} />
+          </Route>
+          <Route exact path="/react-quiz-app/random-quiz/">
+            <NewQuiz />
           </Route>
           <Route exact path="/react-quiz-app/quiz/:qid/:qn">
             <MainArea quizOn={true} />

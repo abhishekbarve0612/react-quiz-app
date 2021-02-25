@@ -34,6 +34,8 @@ const QuizList = () => {
       attemptCount={32}
       topScorer="Abhishek Barve"
       />
+
+      
       
       <QuizInfoCard 
       name="Abhishek's Quiz" 

@@ -38,6 +38,14 @@
   padding: 15px;
   margin: 5px;
   align-self: center;
+  background-color: #e4572e;
+  color: white;
+  border: none;
+}
+
+.sign-up-with button:hover {
+  background-color: #009688;
+  color: #e8ebed;
 }
 
 form .form-input {
@@ -53,7 +61,15 @@ select {
   margin: 10px;
   margin-left: 20px;
   align-self: center;
+  background-color: #e8ebed;
+  border: none;
 }
+
+.form-input input:focus {
+  background-color: #e4572e;
+  color: #e8ebed;
+}
+
 .form-input label {
   grid-column: 1/2;
   font-size: large;
@@ -71,8 +87,22 @@ select {
 
 .form-buttons button {
   padding: 10px;
+  background-color: #e4572e;
+  color: white;
+  border: none;
+}
+
+.form-buttons button:hover {
+  background-color: #009688;
+  color: #e8ebed;
 }
 
 .form-submit button {
   padding: 20px;
+  background-color: #e4572e;
+}
+
+.form-submit button:hover {
+  background-color: #009688;
+  color: #e8ebed;
 }

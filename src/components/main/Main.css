@@ -1,6 +1,6 @@
 .sidebar {
   grid-column: 1/2;
-  border-right: 1px dashed rosybrown;
+  border-right: 1px solid #e4572e;
 }
 
 .main-area {
@@ -17,14 +17,14 @@
 }
 .sidebar button {
   padding: 20px;
-  background-color: blueviolet;
+  background-color: #e4572e;
   color: white;
   border: none;
 }
 .sidebar button:nth-child(odd) {
   padding: 20px;
-  background-color: lightgrey;
-  color: black;
+  background-color: #009688;
+  color: white;
 }
 
 /** Ranker Card ***/
@@ -33,22 +33,23 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-auto-rows: minmax(50px, auto);
-  background-color: darkgray;
+  background-color: #607d8b;
+  color: white;
 }
 .ranker:nth-child(odd) .rank {
-  background-color: darkgray;
+  background-color: #e4572e;
 }
 .ranker:nth-child(odd) .name {
-  background-color: white;
+  background-color: #009688;
 }
 
 .ranker .rank {
-  background-color: white;
+  background-color: #009688;
   grid-column: 1/2;
   display: grid;
 }
 .ranker .name {
-  background-color: darkgray;
+  background-color: #e4572e;
   grid-column: 2/4;
   display: grid;
 }

@@ -32,7 +32,7 @@
 }
 
 .question {
-  background-color: lightgreen;
+  background-color: #e8ebed;
   padding: 30px;
   grid-row: 1/2;
   display: grid;
@@ -57,7 +57,7 @@
 .options .option {
   justify-self: stretch;
   align-self: center;
-  background-color: lightgreen;
+  background-color: #e8ebed;
   padding: 10px;
 }
 .option input[type="checkbox"] {
@@ -96,13 +96,19 @@
 }
 
 .categories > a {
-  background-color: aqua;
+  background-color: #e4572e;
+  color: white;
   height: minmax(40px, auto);
   width: 100px;
   text-align: center;
   padding: 10px;
   margin: 10px;
   display: grid;
+}
+
+.categories a:hover {
+  background-color: #009688;
+  color: #e8ebed;
 }
 .categories > a > span {
   align-self: center;
@@ -121,7 +127,7 @@
   grid-auto-columns: minmax(50px, auto);
   padding: 20px;
   width: 250px;
-  background-color: burlywood;
+  background-color: #009688;
 }
 
 .quiz-info-head {
@@ -143,7 +149,13 @@
 .quiz-attempt button {
   padding: 8px;
   border: none;
-  background-color: lightgreen;
+  background-color: #e4572e;
+  color: white;
+}
+
+.quiz-attempt button:hover {
+  background-color: #b0fe76;
+  color: #e4572e;
 }
 
 .quiz-details {
@@ -155,7 +167,7 @@
 
 .question-navigator {
   grid-column: 1/2;
-  border-right: 1px dashed rosybrown;
+  border-right: 1px dashed #e4572e;
   max-height: 80vh;
   overflow-y: auto;
 }
@@ -166,20 +178,20 @@
 }
 .question-navigator a {
   padding: 20px;
-  background-color: blueviolet;
+  background-color: #e4572e;
   color: white;
   border: none;
 }
 .question-navigator a:nth-child(odd) {
   padding: 20px;
-  background-color: lightgrey;
+  background-color: #e8ebed;
   color: black;
 }
 
 /*****/
 .marked {
-  background-color: purple !important;
-  color: wheat;
+  background-color: #b0fe76 !important;
+  color: black;
 }
 
 /***ScoreCard *****/
@@ -197,6 +209,14 @@
   justify-self: center;
   align-self: center;
   text-align: center;
+}
+
+.scorecard a {
+  padding: 10px;
+  margin: 20px;
+  background-color: #009688;
+  color: white;
+  justify-self: center;
 }
 
 /*** New Quiz Form **/

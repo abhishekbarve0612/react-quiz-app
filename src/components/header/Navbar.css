@@ -6,6 +6,11 @@
   text-transform: uppercase;
   font-family: monospace;
   font-size: 15px;
+  background-color: #607d8b;
+  color: white;
+}
+.navbar .brand-name a {
+  color: white;
 }
 
 .navbar .brand {
@@ -26,7 +31,6 @@
 
 .navbar .menu {
   justify-self: center;
-  background-color: antiquewhite;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
@@ -50,10 +54,23 @@
 }
 
 .menu .item {
-  border-right: 1px solid black;
-  align-self: center;
+  border-right: 2px solid #e8ebed;
+  align-self: stretch;
+  display: grid;
+}
+
+.menu .item:hover,
+.menu .item:hover > a {
+  background-color: #009688;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .menu .item:last-child {
   border: none;
+}
+
+.menu .item a {
+  color: white;
+  align-self: center;
 }

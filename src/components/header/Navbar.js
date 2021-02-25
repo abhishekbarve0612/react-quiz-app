@@ -11,7 +11,7 @@ const Navbar = () => {
         <img src={logo}  alt="logo" />
       </div>
       <div className="brand-name">
-        React Quiz App
+        <Link to="/react-quiz-app/">React Quiz App</Link>
       </div>
       </div>
       <div className="menu">
@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to="/react-quiz-app/random-quiz/">Play Random Quiz</Link>
         </div>
         <div className="item">
-          <a href="#opt3">ScoreCard</a>
+          <Link to="/react-quiz-app/quiz/result/">ScoreCard</Link>
         </div>
         <div className="item">
           <Link to="/react-quiz-app/register">Register</Link>

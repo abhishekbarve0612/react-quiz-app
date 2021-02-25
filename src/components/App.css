@@ -1,19 +1,19 @@
 /***colors**/
 
 .primary-color {
-  background-color: lightseagreen;
+  background-color: #009688;
 }
 .secondary-color {
-  background-color: deepskyblue;
+  background-color: #607d8b;
 }
 
 .success-color {
-  background-color: lightgreen;
+  background-color: #b0fe76;
   color: black !important;
 }
 
 .danger-color {
-  background-color: crimson;
+  background-color: #e4572e;
 }
 
 a {

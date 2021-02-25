@@ -13,7 +13,7 @@ const ScoreCard = () => {
       <div className="res">
         Congratulations! {user} <br/>
         You Scored: {score} out of {qCount} <br/>
-        Your Success % is {(score / qCount * 100).toFixed(2)} %
+        Your Success % is {(score / qCount * 100).toFixed(2)}%
       </div>
       <Link to="/react-quiz-app/">Go Back To Home</Link>
     </div>

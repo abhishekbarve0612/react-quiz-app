@@ -1,9 +1,28 @@
+/***colors**/
+
+.primary-color {
+  background-color: lightseagreen;
+}
+.secondary-color {
+  background-color: deepskyblue;
+}
+
+.success-color {
+  background-color: lightgreen;
+  color: black !important;
+}
+
+.danger-color {
+  background-color: crimson;
+}
+
 a {
   text-decoration: none;
 }
 
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .main-body {

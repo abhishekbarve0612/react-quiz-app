@@ -11,14 +11,18 @@ const QuizNavbar = () => {
     <div className="quiz-nav">
       { qno > 0
         &&
-        <Link to={`/react-quiz-app/quiz/${qn.qid}/${prev}`}>
-        <span className="previous">Previous</span>
+        <Link className="previous primary-color" to={`/react-quiz-app/quiz/${qn.qid}/${prev}`}>
+        <span>Previous</span>
       </Link>}
-      {next && <Link to={`/react-quiz-app/quiz/${qn.qid}/${next}`}>
-      <span className="next">Next</span>
+      {next && <Link className="next primary-color" to={`/react-quiz-app/quiz/${qn.qid}/${next}`}>
+      <span>Next</span>
       </Link>}
-      <div className="submit">Submit</div>
-      <div className="close">Close</div>
+      <Link className="submit success-color" to="/react-quiz-app/quiz/result">
+      <span>Submit</span>
+      </Link>
+      <Link className="close danger-color" to="/react-quiz-app/">
+      <div>Close</div>
+      </Link>
     </div>
    );
 }

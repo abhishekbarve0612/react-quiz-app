@@ -5,19 +5,17 @@ import QuizNavbar from './QuizNavbar';
 import moduleName from '../../customHooks/useFetch';
 import useFetch from '../../customHooks/useFetch';
 import { useDispatch, useSelector } from 'react-redux';
-import { incrementScore } from '../../redux';
+import { incrementScore, markedAnswers, setQuiz } from '../../redux';
 
 const Quiz = () => {
-  const totalScore = useSelector(state => state.totalScore);
+  const totalScore = useSelector(state => state.score.totalScore);
+  const markedAnswersFromStore = useSelector(state => state.quiz.markedAnswers);
+  const fetchedQuiz = useSelector(state => state.quiz.setQuiz);
   const dispatch = useDispatch();
   const urlParam = useParams();
   const API_URL = `https://opentdb.com/api.php?amount=10&category=${urlParam.qid}&difficulty=easy`;
   const { data:quiz, isLoading, error} = useFetch(API_URL);
-  let markedAnswers = [];
-  for (let i = 0; i < 10; i++) {
-    markedAnswers[i] = '';
-  }
-
+  dispatch(setQuiz(quiz));
   const shuffleArr =  (array) => {
     for (var i = array.length - 1; i > 0; i--) {
         var rand = Math.floor(Math.random() * (i + 1));
@@ -38,9 +36,8 @@ const Quiz = () => {
     console.log(quiz['results'] + " Original");
   }
 
-  const [mAnswers, setMAnswers] = useState(markedAnswers);
   const markAnswer = (e, qno) => {
-    let tempArray = [...mAnswers];
+    let tempArray = [...markedAnswersFromStore];
     if (e.target.nodeName == "INPUT" || e.target.nodeName == "SPAN"){
       let parent = e.target.parentElement;
       let check = parent.children;
@@ -66,7 +63,7 @@ const Quiz = () => {
           tempArray[qno] = element.getAttribute("value");
         }
     }
-    setMAnswers(tempArray);
+    dispatch(markedAnswers(tempArray));
   }
 
   const computeScore = () => {
@@ -86,7 +83,7 @@ const Quiz = () => {
       console.log(correct_answers);
       let score = 0;
       for (let i = 0; i < correct_answers.length; i++) {
-        if (correct_answers[i] == mAnswers[i]) score++;
+        if (correct_answers[i] == markedAnswersFromStore[i]) score++;
       }
       console.log("Total Score Till Now: " + score);
       dispatch(incrementScore(score));
@@ -95,7 +92,7 @@ const Quiz = () => {
 
   const checkIfMarked = (qno, value, element) => {
       const check = element.children;
-      if (mAnswers[qno] == value){
+      if (markedAnswersFromStore[qno] == value){
         element.classList.add("marked");
         check[0].checked = true;
       } else {
@@ -127,7 +124,7 @@ const Quiz = () => {
       </div>
             
       {quiz && <div className="quiz-body">
-        <QuestionAnswer  question={quiz['results']} checkIfMarked={checkIfMarked} markAnswer={markAnswer} optionsArray={optionsArray} markedAnswers={markedAnswers} />
+        <QuestionAnswer  question={quiz['results']} checkIfMarked={checkIfMarked} markAnswer={markAnswer} optionsArray={optionsArray} markedAnswers={markedAnswersFromStore} />
         <QuizNavbar />
         </div>}
       

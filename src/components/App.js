@@ -11,6 +11,7 @@ import Quiz from './quiz/Quiz';
 import Registration from './accounts/Registration';
 import Signin from './accounts/Signin';
 import store from '../redux/store';
+import ScoreCard from './quiz/ScoreCard';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path="/react-quiz-app/quiz/:qid/:qn">
             <MainArea quizOn={true} />
+          </Route>
+          <Route exact path="/react-quiz-app/quiz/result">
+            <ScoreCard />
           </Route>
           <Route exact path="/react-quiz-app/register">
             <Sidebar />

@@ -1,7 +1,20 @@
-import {MARK_ANSWER} from './quizTypes';
+import {SET_QUIZ, MARKED_ANSWERS} from './quizTypes';
 
-export const markAnswer = () => {
+let mAnswers = [];
+for (let i = 0; i < 10; i++) {
+  mAnswers[i] = '';
+}
+
+export const setQuiz = (quiz = {}) => {
   return {
-    type: MARK_ANSWER
+    type: SET_QUIZ,
+    payload: quiz
+  }
+}
+
+export const markedAnswers = (answerArray = mAnswers) => {
+  return {
+    type: MARKED_ANSWERS,
+    payload: answerArray
   }
 }

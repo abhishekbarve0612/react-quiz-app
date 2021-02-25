@@ -1,14 +1,27 @@
-import {MARK_ANSWER} from './quizTypes';
+import {MARKED_ANSWERS, SET_QUIZ} from './quizTypes';
 
-const initialState = {
-  answerMarked: []
+
+let mAnswers = [];
+for (let i = 0; i < 10; i++) {
+  mAnswers[i] = '';
 }
 
-// const quizReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case MARK_ANSWER: return {
-//       ...state,
-//       answerMarked = 
-//     }
-//   }
-// }
+const initialState = {
+  markedAnswers: mAnswers
+}
+
+const quizReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case MARKED_ANSWERS: return {
+      ...state,
+      markedAnswers: action.payload 
+    }
+    case SET_QUIZ: return {
+      ...state,
+      quiz: action.payload 
+    }
+    default: return state;
+  }
+}
+
+export default quizReducer;

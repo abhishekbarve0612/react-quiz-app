@@ -54,7 +54,6 @@
 }
 
 .menu .item {
-  border-right: 2px solid #e8ebed;
   align-self: stretch;
   display: grid;
 }
@@ -73,4 +72,9 @@
 .menu .item a {
   color: white;
   align-self: center;
+  border-right: 2px solid #e8ebed;
+}
+
+.menu .item:last-child a {
+  border: none !important;
 }

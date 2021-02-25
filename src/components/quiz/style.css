@@ -32,7 +32,8 @@
 }
 
 .question {
-  background-color: #e8ebed;
+  background-color: #009688;
+  color: #e8ebed;
   padding: 30px;
   grid-row: 1/2;
   display: grid;

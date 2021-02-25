@@ -40,3 +40,9 @@ I am creating a <h2>Quiz App</h2>
 <li>Option for playing for Guest User too without signing in</li>
 <li>Integrating with my own APIs using either Django or Node</li>
 </ul>
+
+<h3>Known Bug which I am hahving trouble resolving:</h3>
+
+<ul>
+<li>I am randomizing all the options of a question before rendering, but it shuffles every time I select any option.</li>
+</ul>

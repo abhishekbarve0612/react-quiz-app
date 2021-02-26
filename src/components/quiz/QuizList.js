@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFetch from '../../customHooks/useFetch';
+import CategoryButton from './CategoryButton';
 import QuizInfoCard from './QuizInfoCard';
 
 const QuizList = () => {
@@ -8,16 +9,11 @@ const QuizList = () => {
   let categories;
   if (categoryData) categories = categoryData['trivia_categories'];
   return ( 
+    <>
+    
     <div className="quiz-list-category">
-    {categoryData && <div className="categories">
-      {
-        categories.map((category, key) => (
-          <Link key={key} to={`/react-quiz-app/quiz/${category.id}/0`}>
-            <span>{category.name}</span>
-          </Link>
-        ))
-      }
-    </div>}
+      <CategoryButton categories={categories} flag={false} />
+    </div>
     <div className="quiz-list">
       <QuizInfoCard 
       name="Abhishek's Quiz" 
@@ -47,7 +43,8 @@ const QuizList = () => {
       
       
     </div>
-   </div>
+   
+    </>
     );
 }
  

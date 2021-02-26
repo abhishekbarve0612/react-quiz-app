@@ -1,11 +1,10 @@
 .navbar {
   display: grid;
-  grid-template-columns: 5fr 3fr;
+  grid-template-columns: 60vw 40vw;
   border-bottom: 1px solid darkkhaki;
   grid-auto-rows: minmax(50px, auto);
   text-transform: uppercase;
   font-family: monospace;
-  font-size: 15px;
   background-color: #607d8b;
   color: white;
 }
@@ -27,15 +26,21 @@
 
 .brand-name {
   align-self: center;
+  font-size: 15px;
 }
 
 .navbar .menu {
-  justify-self: center;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(5, 1fr); */
+  justify-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: inherit;
 }
 
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
   .navbar .menu {
     justify-self: center;
     background-color: antiquewhite;
@@ -51,17 +56,21 @@
     display: grid;
     grid-template-columns: repeat(2, 2fr);
   }
-}
+} */
 
 .menu .item {
-  align-self: stretch;
-  display: grid;
+  /* align-self: stretch;
+  display: grid; */
+  justify-self: stretch;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .menu .item:hover,
 .menu .item:hover > a {
   background-color: #009688;
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bolder;
 }
 
@@ -72,7 +81,7 @@
 .menu .item a {
   color: white;
   align-self: center;
-  border-right: 2px solid #e8ebed;
+  font-size: 20px;
 }
 
 .menu .item:last-child a {

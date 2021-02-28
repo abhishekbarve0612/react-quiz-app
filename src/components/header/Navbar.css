@@ -67,13 +67,6 @@
   padding-right: 10px;
 }
 
-.menu .item:hover,
-.menu .item:hover > a {
-  background-color: #009688;
-  font-size: 23px;
-  font-weight: bolder;
-}
-
 .menu .item:last-child {
   border: none;
 }
@@ -81,7 +74,33 @@
 .menu .item a {
   color: white;
   align-self: center;
-  font-size: 20px;
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+}
+
+.menu .item a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.menu .item a:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 .menu .item:last-child a {
